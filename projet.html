@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Milkalin - Boisson végétale</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #f3e9dc, #e6d3b3);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: #4e342e;
+    }
+
+    header {
+      background-color: #a67c52;
+      color: #fff8e1;
+      padding: 25px;
+      font-size: 2.5em;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      margin-top: 40px;
+    }
+
+    .main-bottle {
+      width: 220px;
+      transition: transform 0.3s;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0); }
+    }
+
+    .branch {
+      display: none;
+      margin-top: 50px;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    .branch img {
+      width: 130px;
+      margin: 10px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .branch img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+    }
+
+    .qr-image {
+      margin-top: 30px;
+      width: 180px;
+      transition: transform 0.3s;
+    }
+
+    .qr-image:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      color: #6d4c41;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<header>🌱 Milkalin - À base de graines de lin</header>
+
+<div class="container">
+  <img src="https://via.placeholder.com/200x300.png?text=Milkalin" class="main-bottle" alt="Bouteille Milkalin">
+
+  <!-- QR Code image (affichée uniquement, scan se fait avec téléphone) -->
+  <div>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://tonsite.com/milkalin&size=180x180" 
+         alt="QR Code Milkalin" class="qr-image">
+    <p>Scanne-moi 📱</p>
+  </div>
+
+  <!-- Branches -->
+  <div class="branch" id="branch1">
+    <h2>Lait Aromatisé</h2>
+    <img src="https://via.placeholder.com/120x180.png?text=Choco" alt="Choco">
+    <img src="https://via.placeholder.com/120x180.png?text=Vanille" alt="Vanille">
+    <img src="https://via.placeholder.com/120x180.png?text=Fraise" alt="Fraise">
+    <img src="https://via.placeholder.com/120x180.png?text=Banane" alt="Banane">
+  </div>
+
+  <div class="branch" id="branch2">
+    <h2>Margarine</h2>
+    <img src="https://via.placeholder.com/120x120.png?text=Margarine" alt="Margarine">
+  </div>
+
+  <div class="branch" id="branch3">
+    <h2>Mayonnaise</h2>
+    <img src="https://via.placeholder.com/120x120.png?text=Mayonnaise" alt="Mayonnaise">
+  </div>
+</div>
+
+<script>
+  // Simule l'affichage auto des branches (optionnel si tu veux afficher directement sans scan réel)
+  window.onload = function () {
+    document.getElementById("branch1").style.display = "block";
+    document.getElementById("branch2").style.display = "block";
+    document.getElementById("branch3").style.display = "block";
+  }
+</script>
+
+</body>
+</html>
