@@ -22,14 +22,17 @@
       font-weight: bold;
       letter-spacing: 1px;
     }
-.tous{
-  margin-top: 40px;
-}
+
+    .tous {
+      margin-top: 40px;
+    }
+
     .container {
       margin-top: 40px;
     }
-      .container img {
-       width: 200px;
+
+    .container img {
+      width: 200px;
       height: 400px;
       object-fit: cover;
       margin: 15px;
@@ -37,40 +40,16 @@
       box-shadow: 0 6px 12px rgba(0,0,0,0.2);
       transition: transform 0.3s, box-shadow 0.3s;
     }
- .container img:hover {
+
+    .container img:hover {
       transform: scale(1.08);
       box-shadow: 0 10px 20px rgba(0,0,0,0.25);
     }
+
     .main-bottle {
       width: 220px;
       transition: transform 0.3s;
       animation: float 2s ease-in-out infinite;
-    }
- .branch img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      margin: 15px;
-      border-radius: 15px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .branch img:hover {
-      transform: scale(1.08);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.25);
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-      100% { transform: translateY(0); }
-    }
-
-    .branch {
-      display: none;
-      margin-top: 50px;
-      animation: fadeInUp 1s ease forwards;
     }
 
     .branch img {
@@ -84,6 +63,18 @@
     .branch img:hover {
       transform: scale(1.1);
       box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0); }
+    }
+
+    .branch {
+      display: none;
+      margin-top: 50px;
+      animation: fadeInUp 1s ease forwards;
     }
 
     .qr-image {
@@ -105,56 +96,53 @@
       color: #6d4c41;
       margin-bottom: 10px;
     }
+
+    .branch-images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
   </style>
 </head>
 <body>
 
 <header>🌱 Milkalin - À base de graines de lin</header>
+
 <div class="tous">
-<div class="container">
-   
-  <img src="lait.png" alt="Bouteille Milkalin">
-</div>
-  <!-- QR Code image (affichée uniquement, scan se fait avec téléphone) -->
+  <div class="container">
+    <img src="lait.png" alt="Bouteille Milkalin">
+  </div>
+
+  <!-- QR Code image -->
   <div>
-    <img src="frame.png" 
-         alt="QR Code Milkalin" class="qr-image">
+    <img src="frame.png" alt="QR Code Milkalin" class="qr-image">
     <p>Scanne-moi 📱</p>
   </div>
 
-  <!-- Branches -->
+  <!-- Lait Aromatisé -->
   <div class="branch" id="branch1">
     <h2>Lait Aromatisé</h2>
     <div class="branch-images">
-    <img src="chocolat.png" alt="Choco">
-    <img src="fraise1.png" alt="fraise">
-    <img src="fraise dattes1.png" alt="Fraise datte">
-    <img src="mure1.png" alt="mure">
+      <img src="chocolat.png" alt="Choco">
+      <img src="fraise1.png" alt="Fraise">
+      <img src="fraise dattes1.png" alt="Fraise datte">
+      <img src="mure1.png" alt="Mûre">
     </div>
   </div>
 
-  <div class="branch" id="branch2">
-        <h2>Margarine</h2>
-        <div class="branch-images">
-          <img
-            src="https://via.placeholder.com/120x120.png?text=Margarine"
-            alt="Margarine"
-          />
-        </div>
-      </div>
+  <!-- Mayonnaise -->
   <div class="branch" id="branch3">
     <h2>Mayonnaise</h2>
-     <div class="branch-images">
-    <img src="mayonnaise.png" alt="Mayonnaise">
-     </div>
+    <div class="branch-images">
+      <img src="mayonnaise.png" alt="Mayonnaise">
+    </div>
   </div>
 </div>
 
 <script>
-  // Simule l'affichage auto des branches (optionnel si tu veux afficher directement sans scan réel)
+  // Affiche les sections au chargement
   window.onload = function () {
     document.getElementById("branch1").style.display = "block";
-    document.getElementById("branch2").style.display = "block";
     document.getElementById("branch3").style.display = "block";
   }
 </script>
